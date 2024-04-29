@@ -8,14 +8,14 @@
     {% for post in posts %}
         <h2>{{ post.title }}</h2>
         <p>{{ post.content }}</p>
-        <a href="{% url 'edit_post' post.id %}"><button>Редактировать</button></a>
+        <a href="{% url 'edit_post' post.id %}"><button>Edit</button></a>
         <form method="post" action="{% url 'delete_post' post.id %}" style="display: inline;">
         {% csrf_token %}
-        <button type="submit">Удалить</button>
+        <button type="submit">Delate</button>
         </form>
     {% endfor %}
     <br>
-    <a href="{% url 'create_post' %}"><button>Создать Новый Пост</button></a>
+    <a href="{% url 'create_post' %}"><button>Create New Post</button></a>
 
 </body>
 </html>
